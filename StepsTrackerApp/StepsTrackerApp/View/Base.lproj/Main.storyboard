@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fc7-g4-css">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cEB-DU-zgC">
-                                <rect key="frame" x="10" y="54" width="394" height="798"/>
+                                <rect key="frame" x="10" y="98" width="394" height="754"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -30,13 +30,63 @@
                             <constraint firstItem="cEB-DU-zgC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="wNC-Sr-yZH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Nhj-tX-Gch"/>
                     <connections>
                         <outlet property="tripsTableView" destination="cEB-DU-zgC" id="K01-iW-4CF"/>
+                        <segue destination="Y39-MT-OKU" kind="show" id="Pwh-64-xFo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="124"/>
+            <point key="canvasLocation" x="1031.8840579710145" y="123.88392857142857"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="1OJ-1E-4vh">
+            <objects>
+                <viewController storyboardIdentifier="mapViewController" id="Y39-MT-OKU" customClass="MapViewController" customModule="StepsTrackerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E0V-DC-LdQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AdC-r3-Hul" customClass="GMSMapView">
+                                <rect key="frame" x="10" y="98" width="394" height="754"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fOv-CW-rX4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AdC-r3-Hul" firstAttribute="leading" secondItem="fOv-CW-rX4" secondAttribute="leading" constant="10" id="Kd7-Xh-XqW"/>
+                            <constraint firstItem="AdC-r3-Hul" firstAttribute="top" secondItem="fOv-CW-rX4" secondAttribute="top" constant="10" id="Ny3-aZ-PCY"/>
+                            <constraint firstItem="fOv-CW-rX4" firstAttribute="bottom" secondItem="AdC-r3-Hul" secondAttribute="bottom" constant="10" id="mTi-Xv-w3V"/>
+                            <constraint firstItem="fOv-CW-rX4" firstAttribute="trailing" secondItem="AdC-r3-Hul" secondAttribute="trailing" constant="10" id="qOG-7R-Q3l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ggv-p4-DZo"/>
+                    <connections>
+                        <outlet property="mapView" destination="AdC-r3-Hul" id="sUc-fT-qIF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2rO-aF-ola" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1804.3478260869567" y="129.91071428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f0r-0L-jj5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fc7-g4-css" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rH9-8a-nRJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HhD-G1-qaz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hJH-eu-I0C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121.73913043478262" y="123.88392857142857"/>
         </scene>
     </scenes>
     <resources>

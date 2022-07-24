@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreMotion
+import CoreLocation
 
 class TripsViewController: UIViewController {
     
@@ -25,12 +26,19 @@ class TripsViewController: UIViewController {
         }
     }
     
+    let locationManager = CLLocationManager()
+    var locationsArray = [CLLocationCoordinate2D]()
+
+     
+
+    
     // MARK:- Override Functions
     // viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configuration()
+        configureLocation()
         coreMotionConfiguration()
     }
     
@@ -100,6 +108,35 @@ extension TripsViewController: UITableViewDelegate, UITableViewDataSource{
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mapViewController = (self.storyboard?.instantiateViewController(withIdentifier: "mapViewController") as? MapViewController)!
+        mapViewController.locationsArray = self.locationsArray
+        self.navigationController?.pushViewController(mapViewController, animated: true)
+    }
+    
+    
+}
+
+extension TripsViewController: CLLocationManagerDelegate{
+    
+    func configureLocation() {
+         locationManager.requestAlwaysAuthorization()
+         locationManager.requestWhenInUseAuthorization()
+         if CLLocationManager.locationServicesEnabled() {
+             locationManager.delegate = self
+             locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+             locationManager.startUpdatingLocation()
+         }
+     }
+
+     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+         print("location = \(locValue.latitude) \(locValue.longitude)")
+         locationsArray.append(locValue)
+         print(locationsArray.count)
+         
+     }
+       
     
 }
 

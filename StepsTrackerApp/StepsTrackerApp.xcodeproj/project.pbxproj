@@ -18,6 +18,17 @@
 		FAD12E432886BF0300B2DFC9 /* StepsTrackerAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD12E422886BF0300B2DFC9 /* StepsTrackerAppUITestsLaunchTests.swift */; };
 		FAD12E532886C0DC00B2DFC9 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD12E512886C0DC00B2DFC9 /* TripTableViewCell.swift */; };
 		FAD12E542886C0DC00B2DFC9 /* TripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD12E522886C0DC00B2DFC9 /* TripTableViewCell.xib */; };
+		FAEC05F7288D6CDA00F7BB9F /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC05F6288D6CDA00F7BB9F /* GoogleMaps */; };
+		FAEC05F9288D6DAC00F7BB9F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC05F8288D6DAC00F7BB9F /* MapViewController.swift */; };
+		FAEC05FB288D703300F7BB9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAEC05FA288D703300F7BB9F /* GoogleService-Info.plist */; };
+		FAEC05FE288D785000F7BB9F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC05FD288D785000F7BB9F /* Alamofire */; };
+		FAEC0601288D7A7300F7BB9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC0600288D7A7300F7BB9F /* SwiftyJSON */; };
+		FAEC0604288D7CEF00F7BB9F /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC0603288D7CEF00F7BB9F /* GooglePlaces */; };
+		FAEC0607288D802D00F7BB9F /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC0606288D802D00F7BB9F /* GoogleMaps */; };
+		FAEC0609288D802D00F7BB9F /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC0608288D802D00F7BB9F /* GoogleMapsBase */; };
+		FAEC060B288D802D00F7BB9F /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC060A288D802D00F7BB9F /* GoogleMapsCore */; };
+		FAEC060D288D802D00F7BB9F /* GoogleMapsM4B in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC060C288D802D00F7BB9F /* GoogleMapsM4B */; };
+		FAEC060F288D802D00F7BB9F /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC060E288D802D00F7BB9F /* GooglePlaces */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +64,8 @@
 		FAD12E422886BF0300B2DFC9 /* StepsTrackerAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsTrackerAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FAD12E512886C0DC00B2DFC9 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		FAD12E522886C0DC00B2DFC9 /* TripTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripTableViewCell.xib; sourceTree = "<group>"; };
+		FAEC05F8288D6DAC00F7BB9F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FAEC05FA288D703300F7BB9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +73,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEC0601288D7A7300F7BB9F /* SwiftyJSON in Frameworks */,
+				FAEC0604288D7CEF00F7BB9F /* GooglePlaces in Frameworks */,
+				FAEC0607288D802D00F7BB9F /* GoogleMaps in Frameworks */,
+				FAEC060F288D802D00F7BB9F /* GooglePlaces in Frameworks */,
+				FAEC0609288D802D00F7BB9F /* GoogleMapsBase in Frameworks */,
+				FAEC05F7288D6CDA00F7BB9F /* GoogleMaps in Frameworks */,
+				FAEC05FE288D785000F7BB9F /* Alamofire in Frameworks */,
+				FAEC060D288D802D00F7BB9F /* GoogleMapsM4B in Frameworks */,
+				FAEC060B288D802D00F7BB9F /* GoogleMapsCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +132,7 @@
 				FAD12E282886BF0200B2DFC9 /* Assets.xcassets */,
 				FAD12E2A2886BF0200B2DFC9 /* LaunchScreen.storyboard */,
 				FAD12E2D2886BF0200B2DFC9 /* Info.plist */,
+				FAEC05FA288D703300F7BB9F /* GoogleService-Info.plist */,
 			);
 			path = StepsTrackerApp;
 			sourceTree = "<group>";
@@ -135,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD12E232886BEFE00B2DFC9 /* TripsViewController.swift */,
+				FAEC05F8288D6DAC00F7BB9F /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,6 +197,17 @@
 			dependencies = (
 			);
 			name = StepsTrackerApp;
+			packageProductDependencies = (
+				FAEC05F6288D6CDA00F7BB9F /* GoogleMaps */,
+				FAEC05FD288D785000F7BB9F /* Alamofire */,
+				FAEC0600288D7A7300F7BB9F /* SwiftyJSON */,
+				FAEC0603288D7CEF00F7BB9F /* GooglePlaces */,
+				FAEC0606288D802D00F7BB9F /* GoogleMaps */,
+				FAEC0608288D802D00F7BB9F /* GoogleMapsBase */,
+				FAEC060A288D802D00F7BB9F /* GoogleMapsCore */,
+				FAEC060C288D802D00F7BB9F /* GoogleMapsM4B */,
+				FAEC060E288D802D00F7BB9F /* GooglePlaces */,
+			);
 			productName = StepsTrackerApp;
 			productReference = FAD12E1C2886BEFE00B2DFC9 /* StepsTrackerApp.app */;
 			productType = "com.apple.product-type.application";
@@ -245,6 +280,13 @@
 				Base,
 			);
 			mainGroup = FAD12E132886BEFD00B2DFC9;
+			packageReferences = (
+				FAEC05F5288D6CDA00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
+				FAEC05FC288D785000F7BB9F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FAEC05FF288D7A7300F7BB9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
+				FAEC0605288D802D00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
+			);
 			productRefGroup = FAD12E1D2886BEFE00B2DFC9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -263,6 +305,7 @@
 			files = (
 				FAD12E542886C0DC00B2DFC9 /* TripTableViewCell.xib in Resources */,
 				FAD12E2C2886BF0200B2DFC9 /* LaunchScreen.storyboard in Resources */,
+				FAEC05FB288D703300F7BB9F /* GoogleService-Info.plist in Resources */,
 				FAD12E292886BF0200B2DFC9 /* Assets.xcassets in Resources */,
 				FAD12E272886BEFE00B2DFC9 /* Main.storyboard in Resources */,
 			);
@@ -292,6 +335,7 @@
 				FAD12E532886C0DC00B2DFC9 /* TripTableViewCell.swift in Sources */,
 				FAD12E242886BEFE00B2DFC9 /* TripsViewController.swift in Sources */,
 				FAD12E202886BEFE00B2DFC9 /* AppDelegate.swift in Sources */,
+				FAEC05F9288D6DAC00F7BB9F /* MapViewController.swift in Sources */,
 				FAD12E222886BEFE00B2DFC9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +678,97 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAEC05F5288D6CDA00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/YAtechnologies/GoogleMaps-SP.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		FAEC05FC288D785000F7BB9F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		FAEC05FF288D7A7300F7BB9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/YAtechnologies/GoogleMaps-SP.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		FAEC0605288D802D00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/YAtechnologies/GoogleMaps-SP.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAEC05F6288D6CDA00F7BB9F /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAEC05F5288D6CDA00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMaps;
+		};
+		FAEC05FD288D785000F7BB9F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAEC05FC288D785000F7BB9F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		FAEC0600288D7A7300F7BB9F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAEC05FF288D7A7300F7BB9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		FAEC0603288D7CEF00F7BB9F /* GooglePlaces */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GooglePlaces;
+		};
+		FAEC0606288D802D00F7BB9F /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMaps;
+		};
+		FAEC0608288D802D00F7BB9F /* GoogleMapsBase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMapsBase;
+		};
+		FAEC060A288D802D00F7BB9F /* GoogleMapsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMapsCore;
+		};
+		FAEC060C288D802D00F7BB9F /* GoogleMapsM4B */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMapsM4B;
+		};
+		FAEC060E288D802D00F7BB9F /* GooglePlaces */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GooglePlaces;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FAD12E142886BEFD00B2DFC9 /* Project object */;
 }
