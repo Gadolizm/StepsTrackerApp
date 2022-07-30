@@ -7,6 +7,8 @@
 
 import UIKit
 import GoogleMaps
+import FirebaseCore
+import FirebaseFirestore
 
 
 @main
@@ -17,8 +19,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyAmQXfv96FE-nFEVyaeYa4E495NNFOb3ew")
+        FirebaseApp.configure()
+
+        UserDefaults.standard.set(Date(), forKey: "latestLaunchDate")
+        // your code
+        print("didFinishLaunchingWithOptions")
+
         return true
     }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        UserDefaults.standard.removeObject(forKey: "latestLaunchDate")
+        print("applicationWillTerminate")
+
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        print("applicationWillResignActive")
+
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        print("applicationDidEnterBackground")
+    }
+    
+    
 
     // MARK: UISceneSession Lifecycle
 

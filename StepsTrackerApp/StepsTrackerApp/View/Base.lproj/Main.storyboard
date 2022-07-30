@@ -51,18 +51,50 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AdC-r3-Hul" customClass="GMSMapView">
                                 <rect key="frame" x="10" y="98" width="394" height="754"/>
                             </mapView>
+                            <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ko8-mz-VdG">
+                                <rect key="frame" x="284" y="103" width="100" height="100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kou-Jg-ah1">
+                                        <rect key="frame" x="10" y="12.5" width="80.5" height="75.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GI8-DY-wpy">
+                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="25.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeS-za-Mll">
+                                                <rect key="frame" x="0.0" y="25.5" width="80.5" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstItem="kou-Jg-ah1" firstAttribute="centerY" secondItem="ko8-mz-VdG" secondAttribute="centerY" id="HTW-I8-utk"/>
+                                    <constraint firstAttribute="width" constant="100" id="JeX-91-9S3"/>
+                                    <constraint firstItem="kou-Jg-ah1" firstAttribute="centerX" secondItem="ko8-mz-VdG" secondAttribute="centerX" id="NAD-25-eZw"/>
+                                    <constraint firstAttribute="height" constant="100" id="zag-Ok-kPC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fOv-CW-rX4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="AdC-r3-Hul" firstAttribute="leading" secondItem="fOv-CW-rX4" secondAttribute="leading" constant="10" id="Kd7-Xh-XqW"/>
                             <constraint firstItem="AdC-r3-Hul" firstAttribute="top" secondItem="fOv-CW-rX4" secondAttribute="top" constant="10" id="Ny3-aZ-PCY"/>
+                            <constraint firstItem="AdC-r3-Hul" firstAttribute="trailing" secondItem="ko8-mz-VdG" secondAttribute="trailing" constant="20" id="aYT-MR-gVW"/>
                             <constraint firstItem="fOv-CW-rX4" firstAttribute="bottom" secondItem="AdC-r3-Hul" secondAttribute="bottom" constant="10" id="mTi-Xv-w3V"/>
+                            <constraint firstItem="ko8-mz-VdG" firstAttribute="top" secondItem="AdC-r3-Hul" secondAttribute="top" constant="5" id="qH4-1f-iA9"/>
                             <constraint firstItem="fOv-CW-rX4" firstAttribute="trailing" secondItem="AdC-r3-Hul" secondAttribute="trailing" constant="10" id="qOG-7R-Q3l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ggv-p4-DZo"/>
                     <connections>
+                        <outlet property="distanceLabel" destination="SeS-za-Mll" id="uGM-YI-MDX"/>
                         <outlet property="mapView" destination="AdC-r3-Hul" id="sUc-fT-qIF"/>
                     </connections>
                 </viewController>
@@ -92,6 +124,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

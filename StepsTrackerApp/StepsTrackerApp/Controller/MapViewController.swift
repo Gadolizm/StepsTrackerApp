@@ -10,28 +10,25 @@ import GoogleMaps
 import GooglePlaces
 import Alamofire
 import SwiftyJSON
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class MapViewController: UIViewController {
     
     // MARK:- Outlets
     
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var distanceLabel: UILabel!
     
     
     // MARK:- Properties
     
-    var locationsArray = [CLLocationCoordinate2D]()
+    var db: Firestore!
+    var currentTrip: Trip?
+//    var currentTripNumber: Int?
 
-    
-    // MARK: Define the source latitude and longitude
-    
-    let sourceLat = 28.704060
-    let sourceLng = 77.102493
-    
-    // MARK: Define the destination latitude and longitude
-    
-    let destinationLat = 28.459497
-    let destinationLng = 77.026634
+
     
     // MARK: Create source location and destination location so that you can pass it to the URL
     var sourceLocation = ""
@@ -46,9 +43,13 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configure()
-        addPolylineToMap(locations: locationsArray)
+        configureUI()
+        getURL()
+        callGoogleAPI()
         makeMarkers()
+//        configureFirebase()
+//        getTripDocument()
+
     }
     
     // MARK:- Actions
@@ -57,63 +58,94 @@ class MapViewController: UIViewController {
     
     // MARK:- Methods
     
-//    func configure()  {
-//
-//        sourceLocation = "\(sourceLat),\(sourceLng)"
-//        destinationLocation = "\(destinationLat),\(destinationLng)"
-//        url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(sourceLocation)&destination=\(destinationLocation)&mode=driving&key=AIzaSyAmQXfv96FE-nFEVyaeYa4E495NNFOb3ew"
-//
-//    }
     
+    func configureUI()  {
+        
+        guard let distance = currentTrip?.distanceInMeters else { return }
+        distanceLabel.text = "\(String(describing: distance)) m."
+    }
     
-    // MARK: Request for response from the google
-    
-    func addPolylineToMap(locations: [CLLocationCoordinate2D]) {
-        let path = GMSMutablePath()
-        locations.forEach{ location in
-            path.add(location)
-        }
+    func configureFirebase() {
+        // [START setup]
+        let settings = FirestoreSettings()
 
-        path.addLatitude(-31.95285, longitude: 115.85734)
-        let polyline = GMSPolyline(path: path)
-        polyline.strokeColor = .systemBlue
-        polyline.strokeWidth = 5
-        polyline.geodesic = true
-        polyline.map = mapView
+        Firestore.firestore().settings = settings
+        // [END setup]
+        db = Firestore.firestore()
     }
 
     
-//    func callGoogleAPI() {
-        
-        
-//        AF.request(url).responseJSON { (response) in
-//            print(response.request!)  // original URL request
-//             print(response.response!) // HTTP URL response
-//             print(response.data!)     // server data
-//             print(response.result)   // result of response serialization
-//            guard let data = response.data else {
-//                return
-//            }
+//    func getTripDocument()  {
 //
-//            do {
-//                let jsonData = try JSON(data: data)
-//                let routes = jsonData["routes"].arrayValue
+//        let docRef = db.collection("Trips").document("Trip\(currentTripNumber!)")
 //
-//                for route in routes {
-//                    let overview_polyline = route["overview_polyline"].dictionary
-//                    let points = overview_polyline?["points"]?.string
-//                    let path = GMSPath.init(fromEncodedPath: points ?? "")
-//                    let polyline = GMSPolyline.init(path: path)
-//                    polyline.strokeColor = .systemBlue
-//                    polyline.strokeWidth = 5
-//                    polyline.map = self.mapView
+//        docRef.getDocument(as: Trip.self) { [self] result in
+//                    // The Result type encapsulates deserialization errors or
+//                    // successful deserialization, and can be handled as follows:
+//                    //
+//                    //      Result
+//                    //        /\
+//                    //   Error  City
+//                    switch result {
+//                    case .success(let trip):
+//                        // A `City` value was successfully initialized from the DocumentSnapshot.
+//                        self.currentTrip = trip
+//                        print("Trip: \(trip)")
+//                        getURL()
+//                        callGoogleAPI()
+//                        makeMarkers()
+//                    case .failure(let error):
+//                        // A `City` value could not be initialized from the DocumentSnapshot.
+//                        print("Error decoding trip: \(error)")
+//                    }
 //                }
-//            }
-//            catch let error {
-//                print(error.localizedDescription)
-//            }
-//        }
+//                // [END custom_type]
+//
+//
 //    }
+    
+    func getURL() {
+        
+        guard let trip = currentTrip else { return }
+        
+        sourceLocation = "\(trip.firstLocationLatitude!),\(trip.firstLocationLongitude!)"
+        destinationLocation = "\(trip.lastLocationLatitude!),\(trip.firstLocationLongitude!)"
+        url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(sourceLocation)&destination=\(destinationLocation)&mode=walking&key=AIzaSyAmQXfv96FE-nFEVyaeYa4E495NNFOb3ew"
+
+    }
+    
+    func callGoogleAPI() {
+        
+        
+        AF.request(url).responseJSON { (response) in
+            print(response.request!)  // original URL request
+             print(response.response!) // HTTP URL response
+             print(response.data!)     // server data
+             print(response.result)   // result of response serialization
+            guard let data = response.data else {
+                return
+            }
+
+            do {
+                let jsonData = try JSON(data: data)
+                let routes = jsonData["routes"].arrayValue
+
+                for route in routes {
+                    let overview_polyline = route["overview_polyline"].dictionary
+                    let points = overview_polyline?["points"]?.string
+                    let path = GMSPath.init(fromEncodedPath: points ?? "")
+                    let polyline = GMSPolyline.init(path: path)
+                    polyline.strokeColor = .black
+                    polyline.geodesic = true
+                    polyline.strokeWidth = 5
+                    polyline.map = self.mapView
+                }
+            }
+            catch let error {
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     
     // MARK: Marker for source location
@@ -121,17 +153,17 @@ class MapViewController: UIViewController {
     func makeMarkers() {
         
         let sourceMarker = GMSMarker()
-        sourceMarker.position = CLLocationCoordinate2D(latitude: locationsArray.first?.latitude ?? 0, longitude: locationsArray.first?.longitude ?? 0)
-        sourceMarker.title = "Delhi"
-        sourceMarker.snippet = "The Capital of INDIA"
+        sourceMarker.position = CLLocationCoordinate2D(latitude: currentTrip?.firstLocationLatitude ?? 0.0, longitude: currentTrip?.firstLocationLongitude ?? 0.0)
+        sourceMarker.title = "From"
+        sourceMarker.snippet = "Beginning"
         sourceMarker.map = self.mapView
         
         
         // MARK: Marker for destination location
         let destinationMarker = GMSMarker()
-        destinationMarker.position = CLLocationCoordinate2D(latitude: locationsArray.last?.latitude ?? 0, longitude: locationsArray.last?.latitude ?? 0)
-        destinationMarker.title = "Gurugram"
-        destinationMarker.snippet = "The hub of industries"
+        destinationMarker.position = CLLocationCoordinate2D(latitude: currentTrip?.lastLocationLatitude ?? 0.0, longitude: currentTrip?.lastLocationLongitude ?? 0.0)
+        destinationMarker.title = "To"
+        destinationMarker.snippet = "End"
         destinationMarker.map = self.mapView
         
         let camera = GMSCameraPosition(target: sourceMarker.position, zoom: 100)

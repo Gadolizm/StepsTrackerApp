@@ -7,6 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA91B8932891AABA00D44AB7 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8922891AABA00D44AB7 /* GoogleMaps */; };
+		FA91B8952891AABA00D44AB7 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8942891AABA00D44AB7 /* GoogleMapsBase */; };
+		FA91B8972891AABA00D44AB7 /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8962891AABA00D44AB7 /* GoogleMapsCore */; };
+		FA91B8992891AABA00D44AB7 /* GoogleMapsM4B in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8982891AABA00D44AB7 /* GoogleMapsM4B */; };
+		FA91B89B2891AABA00D44AB7 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B89A2891AABA00D44AB7 /* GooglePlaces */; };
+		FA91B89E2891ABCD00D44AB7 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B89D2891ABCD00D44AB7 /* FirebaseAppCheck */; };
+		FA91B8A02891ABCD00D44AB7 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B89F2891ABCD00D44AB7 /* FirebaseAppDistribution-Beta */; };
+		FA91B8A22891ABCD00D44AB7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8A12891ABCD00D44AB7 /* FirebaseAuth */; };
+		FA91B8A42891ABCD00D44AB7 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8A32891ABCD00D44AB7 /* FirebaseAuthCombine-Community */; };
+		FA91B8A62891ABCD00D44AB7 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8A52891ABCD00D44AB7 /* FirebaseCrashlytics */; };
+		FA91B8A82891ABCD00D44AB7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8A72891ABCD00D44AB7 /* FirebaseDatabase */; };
+		FA91B8AA2891ABCD00D44AB7 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8A92891ABCD00D44AB7 /* FirebaseDatabaseSwift */; };
+		FA91B8AC2891ABCD00D44AB7 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8AB2891ABCD00D44AB7 /* FirebaseDynamicLinks */; };
+		FA91B8AE2891ABCD00D44AB7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8AD2891ABCD00D44AB7 /* FirebaseFirestore */; };
+		FA91B8B02891ABCD00D44AB7 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8AF2891ABCD00D44AB7 /* FirebaseFirestoreCombine-Community */; };
+		FA91B8B22891ABCD00D44AB7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8B12891ABCD00D44AB7 /* FirebaseFirestoreSwift */; };
+		FA91B8B42891ABCD00D44AB7 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8B32891ABCD00D44AB7 /* FirebaseFunctions */; };
+		FA91B8B62891ABCD00D44AB7 /* FirebaseFunctionsCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8B52891ABCD00D44AB7 /* FirebaseFunctionsCombine-Community */; };
+		FA91B8B82891ABCD00D44AB7 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8B72891ABCD00D44AB7 /* FirebaseInAppMessaging-Beta */; };
+		FA91B8BA2891ABCD00D44AB7 /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8B92891ABCD00D44AB7 /* FirebaseInAppMessagingSwift-Beta */; };
+		FA91B8BC2891ABCD00D44AB7 /* FirebaseInstallations in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8BB2891ABCD00D44AB7 /* FirebaseInstallations */; };
+		FA91B8BE2891ABCD00D44AB7 /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8BD2891ABCD00D44AB7 /* FirebaseMLModelDownloader */; };
+		FA91B8C02891ABCD00D44AB7 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8BF2891ABCD00D44AB7 /* FirebaseMessaging */; };
+		FA91B8C22891ABCD00D44AB7 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8C12891ABCD00D44AB7 /* FirebasePerformance */; };
+		FA91B8C42891ABCD00D44AB7 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8C32891ABCD00D44AB7 /* FirebaseRemoteConfig */; };
+		FA91B8C62891ABCD00D44AB7 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8C52891ABCD00D44AB7 /* FirebaseRemoteConfigSwift */; };
+		FA91B8C82891ABCD00D44AB7 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8C72891ABCD00D44AB7 /* FirebaseStorage */; };
+		FA91B8CA2891ABCD00D44AB7 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8C92891ABCD00D44AB7 /* FirebaseStorageCombine-Community */; };
+		FA91B8CD2892EBB900D44AB7 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8CC2892EBB900D44AB7 /* SwiftyJSON */; };
+		FA91B8D02892EC4D00D44AB7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8CF2892EC4D00D44AB7 /* Alamofire */; };
+		FA91B8D32892F10300D44AB7 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA91B8D22892F10300D44AB7 /* Trip.swift */; };
 		FAD12E202886BEFE00B2DFC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD12E1F2886BEFE00B2DFC9 /* AppDelegate.swift */; };
 		FAD12E222886BEFE00B2DFC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD12E212886BEFE00B2DFC9 /* SceneDelegate.swift */; };
 		FAD12E242886BEFE00B2DFC9 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD12E232886BEFE00B2DFC9 /* TripsViewController.swift */; };
@@ -18,17 +49,8 @@
 		FAD12E432886BF0300B2DFC9 /* StepsTrackerAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD12E422886BF0300B2DFC9 /* StepsTrackerAppUITestsLaunchTests.swift */; };
 		FAD12E532886C0DC00B2DFC9 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD12E512886C0DC00B2DFC9 /* TripTableViewCell.swift */; };
 		FAD12E542886C0DC00B2DFC9 /* TripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD12E522886C0DC00B2DFC9 /* TripTableViewCell.xib */; };
-		FAEC05F7288D6CDA00F7BB9F /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC05F6288D6CDA00F7BB9F /* GoogleMaps */; };
 		FAEC05F9288D6DAC00F7BB9F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC05F8288D6DAC00F7BB9F /* MapViewController.swift */; };
 		FAEC05FB288D703300F7BB9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAEC05FA288D703300F7BB9F /* GoogleService-Info.plist */; };
-		FAEC05FE288D785000F7BB9F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC05FD288D785000F7BB9F /* Alamofire */; };
-		FAEC0601288D7A7300F7BB9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC0600288D7A7300F7BB9F /* SwiftyJSON */; };
-		FAEC0604288D7CEF00F7BB9F /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC0603288D7CEF00F7BB9F /* GooglePlaces */; };
-		FAEC0607288D802D00F7BB9F /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC0606288D802D00F7BB9F /* GoogleMaps */; };
-		FAEC0609288D802D00F7BB9F /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC0608288D802D00F7BB9F /* GoogleMapsBase */; };
-		FAEC060B288D802D00F7BB9F /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC060A288D802D00F7BB9F /* GoogleMapsCore */; };
-		FAEC060D288D802D00F7BB9F /* GoogleMapsM4B in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC060C288D802D00F7BB9F /* GoogleMapsM4B */; };
-		FAEC060F288D802D00F7BB9F /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = FAEC060E288D802D00F7BB9F /* GooglePlaces */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA91B8D22892F10300D44AB7 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		FAD12E1C2886BEFE00B2DFC9 /* StepsTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepsTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD12E1F2886BEFE00B2DFC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD12E212886BEFE00B2DFC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,15 +96,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAEC0601288D7A7300F7BB9F /* SwiftyJSON in Frameworks */,
-				FAEC0604288D7CEF00F7BB9F /* GooglePlaces in Frameworks */,
-				FAEC0607288D802D00F7BB9F /* GoogleMaps in Frameworks */,
-				FAEC060F288D802D00F7BB9F /* GooglePlaces in Frameworks */,
-				FAEC0609288D802D00F7BB9F /* GoogleMapsBase in Frameworks */,
-				FAEC05F7288D6CDA00F7BB9F /* GoogleMaps in Frameworks */,
-				FAEC05FE288D785000F7BB9F /* Alamofire in Frameworks */,
-				FAEC060D288D802D00F7BB9F /* GoogleMapsM4B in Frameworks */,
-				FAEC060B288D802D00F7BB9F /* GoogleMapsCore in Frameworks */,
+				FA91B8B42891ABCD00D44AB7 /* FirebaseFunctions in Frameworks */,
+				FA91B8AA2891ABCD00D44AB7 /* FirebaseDatabaseSwift in Frameworks */,
+				FA91B8BA2891ABCD00D44AB7 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
+				FA91B8C02891ABCD00D44AB7 /* FirebaseMessaging in Frameworks */,
+				FA91B8A02891ABCD00D44AB7 /* FirebaseAppDistribution-Beta in Frameworks */,
+				FA91B8A42891ABCD00D44AB7 /* FirebaseAuthCombine-Community in Frameworks */,
+				FA91B8B02891ABCD00D44AB7 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				FA91B8932891AABA00D44AB7 /* GoogleMaps in Frameworks */,
+				FA91B8BE2891ABCD00D44AB7 /* FirebaseMLModelDownloader in Frameworks */,
+				FA91B8972891AABA00D44AB7 /* GoogleMapsCore in Frameworks */,
+				FA91B8992891AABA00D44AB7 /* GoogleMapsM4B in Frameworks */,
+				FA91B8B22891ABCD00D44AB7 /* FirebaseFirestoreSwift in Frameworks */,
+				FA91B89B2891AABA00D44AB7 /* GooglePlaces in Frameworks */,
+				FA91B89E2891ABCD00D44AB7 /* FirebaseAppCheck in Frameworks */,
+				FA91B8C22891ABCD00D44AB7 /* FirebasePerformance in Frameworks */,
+				FA91B8D02892EC4D00D44AB7 /* Alamofire in Frameworks */,
+				FA91B8B82891ABCD00D44AB7 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				FA91B8B62891ABCD00D44AB7 /* FirebaseFunctionsCombine-Community in Frameworks */,
+				FA91B8A62891ABCD00D44AB7 /* FirebaseCrashlytics in Frameworks */,
+				FA91B8BC2891ABCD00D44AB7 /* FirebaseInstallations in Frameworks */,
+				FA91B8C42891ABCD00D44AB7 /* FirebaseRemoteConfig in Frameworks */,
+				FA91B8C82891ABCD00D44AB7 /* FirebaseStorage in Frameworks */,
+				FA91B8A82891ABCD00D44AB7 /* FirebaseDatabase in Frameworks */,
+				FA91B8CA2891ABCD00D44AB7 /* FirebaseStorageCombine-Community in Frameworks */,
+				FA91B8952891AABA00D44AB7 /* GoogleMapsBase in Frameworks */,
+				FA91B8A22891ABCD00D44AB7 /* FirebaseAuth in Frameworks */,
+				FA91B8CD2892EBB900D44AB7 /* SwiftyJSON in Frameworks */,
+				FA91B8AC2891ABCD00D44AB7 /* FirebaseDynamicLinks in Frameworks */,
+				FA91B8AE2891ABCD00D44AB7 /* FirebaseFirestore in Frameworks */,
+				FA91B8C62891ABCD00D44AB7 /* FirebaseRemoteConfigSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +146,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA91B8D12892F0E100D44AB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA91B8D22892F10300D44AB7 /* Trip.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FAD12E132886BEFD00B2DFC9 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +179,7 @@
 			children = (
 				FAD12E1F2886BEFE00B2DFC9 /* AppDelegate.swift */,
 				FAD12E212886BEFE00B2DFC9 /* SceneDelegate.swift */,
+				FA91B8D12892F0E100D44AB7 /* Model */,
 				FAD12E4F2886C01500B2DFC9 /* Controller */,
 				FAD12E502886C02400B2DFC9 /* View */,
 				FAD12E282886BF0200B2DFC9 /* Assets.xcassets */,
@@ -189,8 +242,8 @@
 			buildConfigurationList = FAD12E462886BF0300B2DFC9 /* Build configuration list for PBXNativeTarget "StepsTrackerApp" */;
 			buildPhases = (
 				FAD12E182886BEFE00B2DFC9 /* Sources */,
-				FAD12E192886BEFE00B2DFC9 /* Frameworks */,
 				FAD12E1A2886BEFE00B2DFC9 /* Resources */,
+				FAD12E192886BEFE00B2DFC9 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,15 +251,36 @@
 			);
 			name = StepsTrackerApp;
 			packageProductDependencies = (
-				FAEC05F6288D6CDA00F7BB9F /* GoogleMaps */,
-				FAEC05FD288D785000F7BB9F /* Alamofire */,
-				FAEC0600288D7A7300F7BB9F /* SwiftyJSON */,
-				FAEC0603288D7CEF00F7BB9F /* GooglePlaces */,
-				FAEC0606288D802D00F7BB9F /* GoogleMaps */,
-				FAEC0608288D802D00F7BB9F /* GoogleMapsBase */,
-				FAEC060A288D802D00F7BB9F /* GoogleMapsCore */,
-				FAEC060C288D802D00F7BB9F /* GoogleMapsM4B */,
-				FAEC060E288D802D00F7BB9F /* GooglePlaces */,
+				FA91B8922891AABA00D44AB7 /* GoogleMaps */,
+				FA91B8942891AABA00D44AB7 /* GoogleMapsBase */,
+				FA91B8962891AABA00D44AB7 /* GoogleMapsCore */,
+				FA91B8982891AABA00D44AB7 /* GoogleMapsM4B */,
+				FA91B89A2891AABA00D44AB7 /* GooglePlaces */,
+				FA91B89D2891ABCD00D44AB7 /* FirebaseAppCheck */,
+				FA91B89F2891ABCD00D44AB7 /* FirebaseAppDistribution-Beta */,
+				FA91B8A12891ABCD00D44AB7 /* FirebaseAuth */,
+				FA91B8A32891ABCD00D44AB7 /* FirebaseAuthCombine-Community */,
+				FA91B8A52891ABCD00D44AB7 /* FirebaseCrashlytics */,
+				FA91B8A72891ABCD00D44AB7 /* FirebaseDatabase */,
+				FA91B8A92891ABCD00D44AB7 /* FirebaseDatabaseSwift */,
+				FA91B8AB2891ABCD00D44AB7 /* FirebaseDynamicLinks */,
+				FA91B8AD2891ABCD00D44AB7 /* FirebaseFirestore */,
+				FA91B8AF2891ABCD00D44AB7 /* FirebaseFirestoreCombine-Community */,
+				FA91B8B12891ABCD00D44AB7 /* FirebaseFirestoreSwift */,
+				FA91B8B32891ABCD00D44AB7 /* FirebaseFunctions */,
+				FA91B8B52891ABCD00D44AB7 /* FirebaseFunctionsCombine-Community */,
+				FA91B8B72891ABCD00D44AB7 /* FirebaseInAppMessaging-Beta */,
+				FA91B8B92891ABCD00D44AB7 /* FirebaseInAppMessagingSwift-Beta */,
+				FA91B8BB2891ABCD00D44AB7 /* FirebaseInstallations */,
+				FA91B8BD2891ABCD00D44AB7 /* FirebaseMLModelDownloader */,
+				FA91B8BF2891ABCD00D44AB7 /* FirebaseMessaging */,
+				FA91B8C12891ABCD00D44AB7 /* FirebasePerformance */,
+				FA91B8C32891ABCD00D44AB7 /* FirebaseRemoteConfig */,
+				FA91B8C52891ABCD00D44AB7 /* FirebaseRemoteConfigSwift */,
+				FA91B8C72891ABCD00D44AB7 /* FirebaseStorage */,
+				FA91B8C92891ABCD00D44AB7 /* FirebaseStorageCombine-Community */,
+				FA91B8CC2892EBB900D44AB7 /* SwiftyJSON */,
+				FA91B8CF2892EC4D00D44AB7 /* Alamofire */,
 			);
 			productName = StepsTrackerApp;
 			productReference = FAD12E1C2886BEFE00B2DFC9 /* StepsTrackerApp.app */;
@@ -281,11 +355,11 @@
 			);
 			mainGroup = FAD12E132886BEFD00B2DFC9;
 			packageReferences = (
-				FAEC05F5288D6CDA00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
-				FAEC05FC288D785000F7BB9F /* XCRemoteSwiftPackageReference "Alamofire" */,
-				FAEC05FF288D7A7300F7BB9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
-				FAEC0605288D802D00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
+				FA91B8862891AA7800D44AB7 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
+				FA91B8912891AABA00D44AB7 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
+				FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FA91B8CB2892EBB900D44AB7 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				FA91B8CE2892EC4C00D44AB7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = FAD12E1D2886BEFE00B2DFC9 /* Products */;
 			projectDirPath = "";
@@ -332,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA91B8D32892F10300D44AB7 /* Trip.swift in Sources */,
 				FAD12E532886C0DC00B2DFC9 /* TripTableViewCell.swift in Sources */,
 				FAD12E242886BEFE00B2DFC9 /* TripsViewController.swift in Sources */,
 				FAD12E202886BEFE00B2DFC9 /* AppDelegate.swift in Sources */,
@@ -446,6 +521,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -499,6 +575,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -526,6 +603,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = GadoStudying.StepsTrackerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -554,6 +632,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = GadoStudying.StepsTrackerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -680,31 +759,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FAEC05F5288D6CDA00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/YAtechnologies/GoogleMaps-SP.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-		FAEC05FC288D785000F7BB9F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		FAEC05FF288D7A7300F7BB9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
+		FA91B8862891AA7800D44AB7 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/YAtechnologies/GoogleMaps-SP.git";
 			requirement = {
@@ -712,61 +767,190 @@
 				kind = branch;
 			};
 		};
-		FAEC0605288D802D00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
+		FA91B8912891AABA00D44AB7 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/YAtechnologies/GoogleMaps-SP.git";
 			requirement = {
 				branch = main;
+				kind = branch;
+			};
+		};
+		FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		FA91B8CB2892EBB900D44AB7 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		FA91B8CE2892EC4C00D44AB7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FAEC05F6288D6CDA00F7BB9F /* GoogleMaps */ = {
+		FA91B8922891AABA00D44AB7 /* GoogleMaps */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FAEC05F5288D6CDA00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			package = FA91B8862891AA7800D44AB7 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
 			productName = GoogleMaps;
 		};
-		FAEC05FD288D785000F7BB9F /* Alamofire */ = {
+		FA91B8942891AABA00D44AB7 /* GoogleMapsBase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FAEC05FC288D785000F7BB9F /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		FAEC0600288D7A7300F7BB9F /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAEC05FF288D7A7300F7BB9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
-		};
-		FAEC0603288D7CEF00F7BB9F /* GooglePlaces */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
-			productName = GooglePlaces;
-		};
-		FAEC0606288D802D00F7BB9F /* GoogleMaps */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
-			productName = GoogleMaps;
-		};
-		FAEC0608288D802D00F7BB9F /* GoogleMapsBase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			package = FA91B8862891AA7800D44AB7 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
 			productName = GoogleMapsBase;
 		};
-		FAEC060A288D802D00F7BB9F /* GoogleMapsCore */ = {
+		FA91B8962891AABA00D44AB7 /* GoogleMapsCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			package = FA91B8862891AA7800D44AB7 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
 			productName = GoogleMapsCore;
 		};
-		FAEC060C288D802D00F7BB9F /* GoogleMapsM4B */ = {
+		FA91B8982891AABA00D44AB7 /* GoogleMapsM4B */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			package = FA91B8862891AA7800D44AB7 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
 			productName = GoogleMapsM4B;
 		};
-		FAEC060E288D802D00F7BB9F /* GooglePlaces */ = {
+		FA91B89A2891AABA00D44AB7 /* GooglePlaces */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FAEC0602288D7CEF00F7BB9F /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			package = FA91B8862891AA7800D44AB7 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
 			productName = GooglePlaces;
+		};
+		FA91B89D2891ABCD00D44AB7 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		FA91B89F2891ABCD00D44AB7 /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
+		};
+		FA91B8A12891ABCD00D44AB7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		FA91B8A32891ABCD00D44AB7 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		FA91B8A52891ABCD00D44AB7 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		FA91B8A72891ABCD00D44AB7 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		FA91B8A92891ABCD00D44AB7 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		FA91B8AB2891ABCD00D44AB7 /* FirebaseDynamicLinks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDynamicLinks;
+		};
+		FA91B8AD2891ABCD00D44AB7 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		FA91B8AF2891ABCD00D44AB7 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		FA91B8B12891ABCD00D44AB7 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		FA91B8B32891ABCD00D44AB7 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		FA91B8B52891ABCD00D44AB7 /* FirebaseFunctionsCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFunctionsCombine-Community";
+		};
+		FA91B8B72891ABCD00D44AB7 /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		FA91B8B92891ABCD00D44AB7 /* FirebaseInAppMessagingSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessagingSwift-Beta";
+		};
+		FA91B8BB2891ABCD00D44AB7 /* FirebaseInstallations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseInstallations;
+		};
+		FA91B8BD2891ABCD00D44AB7 /* FirebaseMLModelDownloader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMLModelDownloader;
+		};
+		FA91B8BF2891ABCD00D44AB7 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		FA91B8C12891ABCD00D44AB7 /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
+		};
+		FA91B8C32891ABCD00D44AB7 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		FA91B8C52891ABCD00D44AB7 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+		FA91B8C72891ABCD00D44AB7 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		FA91B8C92891ABCD00D44AB7 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+		FA91B8CC2892EBB900D44AB7 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B8CB2892EBB900D44AB7 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		FA91B8CF2892EC4D00D44AB7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA91B8CE2892EC4C00D44AB7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
