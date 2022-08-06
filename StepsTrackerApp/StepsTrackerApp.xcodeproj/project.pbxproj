@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA4435D4289D964000BD27AE /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4435D3289D964000BD27AE /* FirestoreManager.swift */; };
+		FA5229A62895DEFC00EB3A7B /* Test_MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5229A52895DEFC00EB3A7B /* Test_MapViewController.swift */; };
 		FA91B8932891AABA00D44AB7 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8922891AABA00D44AB7 /* GoogleMaps */; };
 		FA91B8952891AABA00D44AB7 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8942891AABA00D44AB7 /* GoogleMapsBase */; };
 		FA91B8972891AABA00D44AB7 /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = FA91B8962891AABA00D44AB7 /* GoogleMapsCore */; };
@@ -71,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA4435D3289D964000BD27AE /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		FA5229A52895DEFC00EB3A7B /* Test_MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_MapViewController.swift; sourceTree = "<group>"; };
 		FA91B8D22892F10300D44AB7 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		FAD12E1C2886BEFE00B2DFC9 /* StepsTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepsTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD12E1F2886BEFE00B2DFC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA4435CE289D8B5E00BD27AE /* Google Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAEC05FA288D703300F7BB9F /* GoogleService-Info.plist */,
+			);
+			path = "Google Files";
+			sourceTree = "<group>";
+		};
+		FA4435CF289D8B8A00BD27AE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAD12E1F2886BEFE00B2DFC9 /* AppDelegate.swift */,
+				FAD12E212886BEFE00B2DFC9 /* SceneDelegate.swift */,
+				FAD12E2D2886BF0200B2DFC9 /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		FA4435D0289D8BA200BD27AE /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				FAD12E282886BF0200B2DFC9 /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		FA4435D1289D8BD900BD27AE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FAD12E252886BEFE00B2DFC9 /* Main.storyboard */,
+				FAD12E2A2886BF0200B2DFC9 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA4435D2289D95FD00BD27AE /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FA4435D3289D964000BD27AE /* FirestoreManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		FA4435D5289D966500BD27AE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FA4435DA289D970000BD27AE /* Map */,
+				FA4435D6289D968F00BD27AE /* Trips */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FA4435D6289D968F00BD27AE /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				FA4435D9289D96E700BD27AE /* Workers */,
+				FA4435D8289D96D700BD27AE /* Presenter */,
+				FAD12E4F2886C01500B2DFC9 /* Controller */,
+				FA4435D7289D96AB00BD27AE /* Cells */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
+		FA4435D7289D96AB00BD27AE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FAD12E552886C0EA00B2DFC9 /* TripTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FA4435D8289D96D700BD27AE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FA4435D9289D96E700BD27AE /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		FA4435DA289D970000BD27AE /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				FA4435DB289D971000BD27AE /* Controller */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		FA4435DB289D971000BD27AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAEC05F8288D6DAC00F7BB9F /* MapViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		FA91B8D12892F0E100D44AB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,15 +282,13 @@
 		FAD12E1E2886BEFE00B2DFC9 /* StepsTrackerApp */ = {
 			isa = PBXGroup;
 			children = (
-				FAD12E1F2886BEFE00B2DFC9 /* AppDelegate.swift */,
-				FAD12E212886BEFE00B2DFC9 /* SceneDelegate.swift */,
+				FA4435CE289D8B5E00BD27AE /* Google Files */,
+				FA4435CF289D8B8A00BD27AE /* Support Files */,
+				FA4435D0289D8BA200BD27AE /* Resourses */,
+				FA4435D2289D95FD00BD27AE /* Managers */,
+				FA4435D1289D8BD900BD27AE /* Storyboards */,
 				FA91B8D12892F0E100D44AB7 /* Model */,
-				FAD12E4F2886C01500B2DFC9 /* Controller */,
-				FAD12E502886C02400B2DFC9 /* View */,
-				FAD12E282886BF0200B2DFC9 /* Assets.xcassets */,
-				FAD12E2A2886BF0200B2DFC9 /* LaunchScreen.storyboard */,
-				FAD12E2D2886BF0200B2DFC9 /* Info.plist */,
-				FAEC05FA288D703300F7BB9F /* GoogleService-Info.plist */,
+				FA4435D5289D966500BD27AE /* Modules */,
 			);
 			path = StepsTrackerApp;
 			sourceTree = "<group>";
@@ -194,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD12E362886BF0300B2DFC9 /* StepsTrackerAppTests.swift */,
+				FA5229A52895DEFC00EB3A7B /* Test_MapViewController.swift */,
 			);
 			path = StepsTrackerAppTests;
 			sourceTree = "<group>";
@@ -211,18 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				FAD12E232886BEFE00B2DFC9 /* TripsViewController.swift */,
-				FAEC05F8288D6DAC00F7BB9F /* MapViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		FAD12E502886C02400B2DFC9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FAD12E252886BEFE00B2DFC9 /* Main.storyboard */,
-				FAD12E552886C0EA00B2DFC9 /* TripTableViewCell */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		FAD12E552886C0EA00B2DFC9 /* TripTableViewCell */ = {
@@ -360,6 +454,8 @@
 				FA91B89C2891ABCD00D44AB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FA91B8CB2892EBB900D44AB7 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				FA91B8CE2892EC4C00D44AB7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FA4435DD289DA7A500BD27AE /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FA04E24E289DA804003CDB87 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
 			);
 			productRefGroup = FAD12E1D2886BEFE00B2DFC9 /* Products */;
 			projectDirPath = "";
@@ -407,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA91B8D32892F10300D44AB7 /* Trip.swift in Sources */,
+				FA4435D4289D964000BD27AE /* FirestoreManager.swift in Sources */,
 				FAD12E532886C0DC00B2DFC9 /* TripTableViewCell.swift in Sources */,
 				FAD12E242886BEFE00B2DFC9 /* TripsViewController.swift in Sources */,
 				FAD12E202886BEFE00B2DFC9 /* AppDelegate.swift in Sources */,
@@ -420,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD12E372886BF0300B2DFC9 /* StepsTrackerAppTests.swift in Sources */,
+				FA5229A62895DEFC00EB3A7B /* Test_MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,7 +690,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 96CZXG77ZE;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = StepsTrackerApp/Info.plist;
+				INFOPLIST_FILE = "StepsTrackerApp/Support Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -621,7 +719,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 96CZXG77ZE;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = StepsTrackerApp/Info.plist;
+				INFOPLIST_FILE = "StepsTrackerApp/Support Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -759,6 +857,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FA04E24E289DA804003CDB87 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/YAtechnologies/GoogleMaps-SP.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		FA4435DD289DA7A500BD27AE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		FA91B8862891AA7800D44AB7 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/YAtechnologies/GoogleMaps-SP.git";

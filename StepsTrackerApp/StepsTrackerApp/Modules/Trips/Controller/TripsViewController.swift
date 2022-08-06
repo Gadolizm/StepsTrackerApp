@@ -8,9 +8,7 @@
 import UIKit
 import CoreMotion
 import CoreLocation
-import FirebaseCore
-import FirebaseFirestore
-import FirebaseFirestoreSwift
+
 
 class TripsViewController: UIViewController {
     
@@ -21,7 +19,7 @@ class TripsViewController: UIViewController {
     
     // MARK:- Properties
     
-    var db: Firestore!
+    let firestoreManager = FirestoreManager()
     let activityManager = CMMotionActivityManager()
     let launchDate = UserDefaults.standard.object(forKey: "latestLaunchDate") as? Date
     let pedoMeter = CMPedometer()
@@ -50,9 +48,8 @@ class TripsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configuration()
-        configureFirebase()
-        getTripDocuments()
         configureLocation()
+        getRetrievedTripsFirestore()
         startStepsCountUpdating()
     }
     
@@ -70,29 +67,13 @@ class TripsViewController: UIViewController {
         tripsTableView.rowHeight = 100
     }
     
-    
-    func getTripDocuments()  {
+    func getRetrievedTripsFirestore() {
         
-        db.collection("Trips").getDocuments() { (querySnapshot, err) in
-            self.trips = [Trip](repeating: Trip(), count: querySnapshot!.documents.count + 1)
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for (index, document) in querySnapshot!.documents.enumerated() {
-                    print("\(document.documentID) => \(document.data())")
-                    self.trips[index].tripNumber = document.data()["tripNumber"] as? Int
-                    self.trips[index].distanceInMeters = document.data()["distance"] as? Int
-                    self.trips[index].stepsCount = document.data()["stepsCount"] as? Int
-                    self.trips[index].firstLocationLongitude = document.data()["firstLocationLongitude"] as? Double
-                    self.trips[index].firstLocationLatitude = document.data()["firstLocationLatitude"] as? Double
-                    self.trips[index].lastLocationLatitude = document.data()["lastLocationLatitude"] as? Double
-                    self.trips[index].lastLocationLongitude = document.data()["lastLocationLongitude"] as? Double
-                    
-                }
-            }
-            self.tripsTableView.reloadData()
-        }
+        firestoreManager.delegate = self
+        firestoreManager.getRetrievedTrips()
     }
+
+    
     
     func stopStepsCountUpdating() {
         activityManager.stopActivityUpdates()
@@ -159,9 +140,9 @@ class TripsViewController: UIViewController {
                             
                         }
                     }
-                    self?.addTripToFirebase(number: (self?.trips.count ?? 0) + 1)
+                    self?.firestoreManager.addTripToFirebase(number: (self?.trips.count ?? 0) + 1, firstLocationLongitude: self?.locationsArray.first?.longitude, firstLocationLatitude: self?.locationsArray.first?.latitude, lastLocationLongitude: self?.locationsArray.last?.longitude, lastLocationLatitude: self?.locationsArray.first?.latitude, distance: self?.distance ?? 0, stepsCount: self?.stepsCount ?? 0)
                     self?.stopStepsCountUpdating()
-                    self?.getTripDocuments()
+                    self?.getRetrievedTripsFirestore()
                     self?.startStepsCountUpdating()
                     
                 }
@@ -215,39 +196,7 @@ class TripsViewController: UIViewController {
             }
         }
     }
-    
-    func configureFirebase() {
-        // [START setup]
-        let settings = FirestoreSettings()
-        
-        Firestore.firestore().settings = settings
-        // [END setup]
-        db = Firestore.firestore()
-    }
-    
-    
-    private func addTripToFirebase(number: Int) {
-        guard let firstLocationLongitude = locationsArray.first?.longitude else { return  }
-        guard let firstLocationLatitude = locationsArray.first?.latitude else { return  }
-        guard let lastLocationLongitude = locationsArray.last?.longitude else { return  }
-        guard let lastLocationLatitude = locationsArray.last?.latitude else { return  }
-        
-        db.collection("Trips").document("Trip\(number)").setData([
-            "tripNumber": number,
-            "firstLocationLongitude": Double(firstLocationLongitude),
-            "firstLocationLatitude": Double(firstLocationLatitude),
-            "lastLocationLongitude": Double(lastLocationLongitude),
-            "lastLocationLatitude": Double(lastLocationLatitude),
-            "distanceInMeters": distance,
-            "stepsCount": stepsCount
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document successfully written!")
-            }
-        }
-    }
+
     
     func navigateToMap(of number: Int) {
         let mapViewController = (self.storyboard?.instantiateViewController(withIdentifier: "mapViewController") as? MapViewController)!
@@ -322,6 +271,16 @@ extension TripsViewController: CLLocationManagerDelegate{
         
     }
     
+    
+}
+
+extension TripsViewController: RetrieveTripsDelegate{
+    func finishRetrieveTrips() {
+        self.trips = firestoreManager.retrievedTrips
+        self.tripsTableView.reloadData()
+        print(trips.count)
+        
+    }
     
 }
 
