@@ -8,16 +8,17 @@
 import UIKit
 import CoreMotion
 import CoreLocation
+import FirebaseFirestore
 
 
 class TripsViewController: UIViewController {
     
-    // MARK:- Outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var tripsTableView: UITableView!
     
     
-    // MARK:- Properties
+    // MARK: - Properties
     
     let firestoreManager = FirestoreManager()
     let activityManager = CMMotionActivityManager()
@@ -37,12 +38,10 @@ class TripsViewController: UIViewController {
     }
     var trips = [Trip]()
     let locationManager = CLLocationManager()
-    var locationsArray = [CLLocationCoordinate2D]()
+    var locationsArray = [GeoPoint]()
     
     
-    
-    
-    // MARK:- Override Functions
+    // MARK: - Override Functions
     // viewDidLoad
     
     override func viewDidLoad() {
@@ -53,13 +52,13 @@ class TripsViewController: UIViewController {
         startStepsCountUpdating()
     }
     
-    // MARK:- Actions
+    // MARK: - Actions
     
     
     
-    // MARK:- Methods
+    // MARK: - Methods
     
-    private func configuration(){
+    func configuration(){
         let nib = UINib(nibName: TripTableViewCell.identifier, bundle: nil)
         tripsTableView.register(nib, forCellReuseIdentifier: TripTableViewCell.identifier)
         tripsTableView.delegate = self
@@ -69,10 +68,15 @@ class TripsViewController: UIViewController {
     
     func getRetrievedTripsFirestore() {
         
-        firestoreManager.delegate = self
-        firestoreManager.getRetrievedTrips()
+//        firestoreManager.delegate = self
+        firestoreManager.configureFirebase()
+        firestoreManager.getTripDocuments {trips in
+            self.trips = trips
+            self.tripsTableView.reloadData()
+            print(self.trips.count)
+        }
     }
-
+    
     
     
     func stopStepsCountUpdating() {
@@ -140,7 +144,8 @@ class TripsViewController: UIViewController {
                             
                         }
                     }
-                    self?.firestoreManager.addTripToFirebase(number: (self?.trips.count ?? 0) + 1, firstLocationLongitude: self?.locationsArray.first?.longitude, firstLocationLatitude: self?.locationsArray.first?.latitude, lastLocationLongitude: self?.locationsArray.last?.longitude, lastLocationLatitude: self?.locationsArray.first?.latitude, distance: self?.distance ?? 0, stepsCount: self?.stepsCount ?? 0)
+                    self?.firestoreManager.addTripToFirebase(trip: self?.fillCurrentTrip() ?? Trip())
+                    
                     self?.stopStepsCountUpdating()
                     self?.getRetrievedTripsFirestore()
                     self?.startStepsCountUpdating()
@@ -150,7 +155,7 @@ class TripsViewController: UIViewController {
         }
     }
     
-    private func startCountingSteps(){
+    func startCountingSteps(){
         
         
         if CMPedometer.isStepCountingAvailable(){
@@ -196,7 +201,7 @@ class TripsViewController: UIViewController {
             }
         }
     }
-
+    
     
     func navigateToMap(of number: Int) {
         let mapViewController = (self.storyboard?.instantiateViewController(withIdentifier: "mapViewController") as? MapViewController)!
@@ -206,19 +211,23 @@ class TripsViewController: UIViewController {
         self.navigationController?.pushViewController(mapViewController, animated: true)
     }
     
-    func fillCurrentTrip(){
+    func fillCurrentTrip() -> Trip?{
         
-        guard let firstLocationLongitude = locationsArray.first?.longitude else { return  }
-        guard let firstLocationLatitude = locationsArray.first?.latitude else { return  }
-        guard let lastLocationLongitude = locationsArray.last?.longitude else { return  }
-        guard let lastLocationLatitude = locationsArray.last?.latitude else { return  }
-        trips[trips.count - 1].firstLocationLatitude = firstLocationLatitude
-        trips[trips.count - 1].firstLocationLongitude = firstLocationLongitude
-        trips[trips.count - 1].lastLocationLatitude = lastLocationLatitude
-        trips[trips.count - 1].lastLocationLongitude = lastLocationLongitude
+        guard let firstLocationLongitude = locationsArray.first?.longitude else { return  nil}
+        guard let firstLocationLatitude = locationsArray.first?.latitude else { return  nil}
+        guard let lastLocationLongitude = locationsArray.last?.longitude else { return  nil}
+        guard let lastLocationLatitude = locationsArray.last?.latitude else { return  nil}
+        trips[trips.count - 1].locations = locationsArray
         trips[trips.count - 1].distanceInMeters = distance
+        trips[trips.count - 1].stepsCount = stepsCount
+        trips[trips.count - 1].id = "Trip\((trips.count) + 1)"
+        trips[trips.count - 1].tripNumber = (trips.count) + 1
+        
+        return trips[trips.count - 1]
+        
         
     }
+    
     
     
     
@@ -266,7 +275,7 @@ extension TripsViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         print("location = \(locValue.latitude) \(locValue.longitude)")
-        locationsArray.append(locValue)
+        locationsArray.append(GeoPoint(latitude: locValue.latitude, longitude: locValue.longitude))
         print(locationsArray.count)
         
     }
@@ -274,13 +283,13 @@ extension TripsViewController: CLLocationManagerDelegate{
     
 }
 
-extension TripsViewController: RetrieveTripsDelegate{
-    func finishRetrieveTrips() {
-        self.trips = firestoreManager.retrievedTrips
-        self.tripsTableView.reloadData()
-        print(trips.count)
-        
-    }
-    
-}
+//extension TripsViewController: RetrieveTripsDelegate{
+//    func finishRetrieveTrips() {
+//        self.trips = firestoreManager.retrievedTrips
+//        self.tripsTableView.reloadData()
+//        print(trips.count)
+//        
+//    }
+//    
+//}
 

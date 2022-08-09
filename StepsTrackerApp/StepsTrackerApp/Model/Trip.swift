@@ -6,14 +6,14 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-struct Trip: Codable {
+struct Trip: Codable{
     
+    @DocumentID var id: String?
     var tripNumber: Int?
-    var firstLocationLongitude: Double?
-    var firstLocationLatitude: Double?
-    var lastLocationLongitude: Double?
-    var lastLocationLatitude: Double?
+    var locations: [GeoPoint]?
     var distanceInMeters: Int?
     var stepsCount: Int?
 

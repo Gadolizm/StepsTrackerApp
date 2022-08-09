@@ -13,8 +13,7 @@ import CoreLocation
 
 class FirestoreManager {
     
-    static let shared = FirestoreManager()
-    weak var delegate:  RetrieveTripsDelegate?
+//    weak var delegate:  RetrieveTripsDelegate?
     var retrievedTrips = [Trip](repeating: Trip(), count: 0)
     
     var db: Firestore!
@@ -28,31 +27,41 @@ class FirestoreManager {
         db = Firestore.firestore()
     }
     
-    
-    func getTripDocuments() {
+    func getTripDocuments(completion: @escaping (_ trips: [Trip])->()) {
         
         db.collection("Trips").getDocuments() { (querySnapshot, err) in
             self.retrievedTrips = [Trip](repeating: Trip(), count: querySnapshot!.documents.count + 1)
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                    for (index, document) in querySnapshot!.documents.enumerated() {
-                        print("\(document.documentID) => \(document.data())")
-                        self.retrievedTrips[index].tripNumber = document.data()["tripNumber"] as? Int
-                        self.retrievedTrips[index].distanceInMeters = document.data()["distance"] as? Int
-                        self.retrievedTrips[index].stepsCount = document.data()["stepsCount"] as? Int
-                        self.retrievedTrips[index].firstLocationLongitude = document.data()["firstLocationLongitude"] as? Double
-                        self.retrievedTrips[index].firstLocationLatitude = document.data()["firstLocationLatitude"] as? Double
-                        self.retrievedTrips[index].lastLocationLatitude = document.data()["lastLocationLatitude"] as? Double
-                        self.retrievedTrips[index].lastLocationLongitude = document.data()["lastLocationLongitude"] as? Double
-                        
+                for (index, document) in querySnapshot!.documents.enumerated() {
+                    print("\(document.documentID) => \(document.data())")
+                    do{
+                        self.retrievedTrips[index] = try document.data(as: Trip.self)
+                    }catch{
+                        print(error)
+                    }
                 }
             }
-            self.delegate?.finishRetrieveTrips()
+//            self.delegate?.finishRetrieveTrips()
+            completion(self.retrievedTrips)
         }
     }
     
-    func addTripToFirebase(number: Int, firstLocationLongitude: CLLocationDegrees?, firstLocationLatitude: CLLocationDegrees?, lastLocationLongitude: CLLocationDegrees?,  lastLocationLatitude: CLLocationDegrees?, distance: Int, stepsCount: Int) {
+    func addTripToFirebase(trip: Trip) {
+        
+        
+        let collectionRef = db.collection("Trips")
+        do {
+            let newDocReference = try collectionRef.addDocument(from: trip)
+            print("Book stored with new document reference: \(newDocReference)")
+        }
+        catch {
+            print(error)
+        }
+    }
+    
+    func addTripToFirebasee(number: Int, firstLocationLongitude: CLLocationDegrees?, firstLocationLatitude: CLLocationDegrees?, lastLocationLongitude: CLLocationDegrees?,  lastLocationLatitude: CLLocationDegrees?, distance: Int, stepsCount: Int) {
         guard let firstLocationLongitude = firstLocationLongitude else { return  }
         guard let firstLocationLatitude = firstLocationLatitude else { return  }
         guard let lastLocationLongitude = lastLocationLongitude else { return  }
@@ -75,17 +84,17 @@ class FirestoreManager {
         }
     }
     
-    func getRetrievedTrips() {
-        configureFirebase()
-        getTripDocuments()
-//        return retrievedTrips
-    }
+//    func getRetrievedTrips() {
+//        configureFirebase()
+//        getTripDocuments(completion: () -> ())
+//        //        return retrievedTrips
+//    }
     
     
     
 }
 
 
-protocol RetrieveTripsDelegate: AnyObject {
-    func finishRetrieveTrips()
-}
+//protocol RetrieveTripsDelegate: AnyObject {
+//    func finishRetrieveTrips()
+//}
